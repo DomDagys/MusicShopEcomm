@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header--mobile">
+            <span class="header__logo">Logo</span>
+            <span class="header__btn-wrapper">
+                <button class="header__login-btn">Login</button>
+                <button class="header__nav-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </span>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero__container">
+                <h1 class="hero__h1">
+                    Lorem ipsum dolor sit amet.
+                </h1>
+                <h2 class="hero__h2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, illo.
+                </h2>
+                <button class="hero__signup-btn">
+                    Sign up
+                </button>
+            </div>
+        </section>
+        <section class="about">
+            <h3 class="about__h3">
+                Lorem ipsum dolor sit amet consectetur.
+            </h3>
+            <div class="about__illustration-box">
+                <i id="note1" class="about__illustration-box__note fas fa-music" style="--i: 1"></i>
+                <i id="note2" class="about__illustration-box__note fas fa-music" style="--i: 2"></i>
+                <img class="about__illustration-box__img" src="/assets/music file2-08.svg" alt="">
+            </div>
+            <p class="about__p">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem placeat tempore illum, omnis error impedit tenetur cumque rerum enim sint.
+            </p>             
+        </section>
+        <section class="carousel">
+            <h1 class="carousel__h2">Lorem ipsum dolor sit.</h1>
+            <div class="carousel__card-container">
+                <ul>
+                    <li class="carousel__card">
+                        <img class="carousel__card__img" src="./assets/item1.jpg" alt="">
+                        <label class="carousel__card__label">Les paul</label>
+                        <span class="carousel__card__price">299 €</span>
+                        <span class="carousel__card__review-wrapper">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                    </li>
+                    <li class="carousel__card">
+                        <img class="carousel__card__img" src="./assets/item2.jpg" alt="">
+                        <label class="carousel__card__label">Overdrive pedal</label>
+                        <span class="carousel__card__price">49 €</span>
+                        <span class="carousel__card__review-wrapper">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </li>
+                    <li class="carousel__card">
+                        <img class="carousel__card__img" src="./assets/item3.jpg" alt="">
+                        <label class="carousel__card__label">Marshal amp</label>
+                        <span class="carousel__card__price">199 €</span>
+                        <span class="carousel__card__review-wrapper">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                    </li>
+                    <li class="carousel__card">
+                        <img class="carousel__card__img" src="./assets/item4.jpg" alt="">
+                        <label class="carousel__card__label">Fender stratocaster</label>
+                        <span class="carousel__card__price">799€</span>
+                        <span class="carousel__card__review-wrapper">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <span class="carousel__btn-wrapper">
+                <button id="carousel__btn--left" class="carousel__btn-wrapper__btn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button id="carousel__btn--right" class="carousel__btn-wrapper__btn">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </span>
+            <div class="carousel__wave-container">
+                <svg id="wave1" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="--i: 1">
+                    <path d="M0 329.166C285.508 -112.075 443.111 -107.362 720 329.166V1024H0V329.166Z" fill="#F2545B"/>
+                    <path d="M720 329.327C1011.79 743.493 1169.76 756.273 1440 329.327V1024H720V329.327Z" fill="#F2545B"/>
+                </svg>
+                <svg id="wave2" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="--i: 2">
+                    <path d="M1440 329.166C1154.49 -112.075 996.889 -107.362 720 329.166V1024H1440V329.166Z" fill="#F2545B"/>
+                    <path d="M720 329.327C428.209 743.493 270.237 756.273 0 329.327V1024H720V329.327Z" fill="#F2545B"/>
+                </svg>                
+                <svg id="wave3" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="--i: 3">
+                    <path d="M0 329.166C285.508 -112.075 443.111 -107.362 720 329.166V1024H0V329.166Z" fill="#F2545B"/>
+                    <path d="M720 329.327C1011.79 743.493 1169.76 756.273 1440 329.327V1024H720V329.327Z" fill="#F2545B"/>
+                </svg>
+            </div>
+        </section>
+        <section class="reviews">
+            <div id="liquid-drop1" class="reviews__liquid-drop" style="--i: 1"></div>
+            <div id="liquid-drop2" class="reviews__liquid-drop" style="--i: 2"></div>
+            <div id="liquid-drop3" class="reviews__liquid-drop" style="--i: 3"></div>
+        </section>
+    </main>
+</body>
+<script src="https://kit.fontawesome.com/4c8c31bdc7.js" crossorigin="anonymous"></script>
+<script src="./javascript/main.js" type="module"></script>
+</html>

@@ -1,0 +1,47 @@
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../abstracts/mixins';
+@import '../abstracts/animations';
+
+.item-card {
+    position: relative;
+    @include flex(column, center);
+    @include transition(250ms);
+    background-color: rgba(white, 0.1);
+    min-width: $card-width;
+    padding: 1em 2em;
+    margin: 1em;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(black, 0.5);
+    border-radius: 1em;
+    border: 1px solid rgba(white, 0.2);
+    border-bottom: 1px solid rgba(white, 0);
+    border-right: 1px solid rgba(white, 0);
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+
+    &::before {
+        @include transition(0.3s);
+        position: absolute;
+        content: "";
+        top: 0;
+        left: $card-width * 2;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(white, 0.2);
+        transform: skew(45deg);
+    }
+
+    &:hover {
+        transform: translateY(-5%);
+        cursor: pointer;
+    }
+
+    & *:hover {
+        cursor: pointer;
+    }
+
+    &:hover::before {
+        left: -$card-width * 2;
+    }
+}

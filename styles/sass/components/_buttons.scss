@@ -1,0 +1,82 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+@mixin red-btn($width: 6em, $height: 2em, $font-size: get-font-size('medium')) {
+    @include button($width, $height, $font-size);
+    background-color: $red;
+    color: $white;
+    @include transition();
+
+    &:hover {
+        background-color: $light-red;
+        transform: scale(105%);
+        cursor: pointer;
+    }
+}
+
+@mixin black-btn($width: 6em, $height: 2em, $font-size: get-font-size('medium')) {
+    position: relative;
+    @include button($width, $height, $font-size);
+    background-color: black;
+    color: $white;
+    border: solid 2px $red;
+    @include transition();
+
+    &::before {
+        @include transition(250ms);
+        border-radius: 10px;
+        position: absolute;
+        width: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        content: "";
+        background-color: $red;
+        z-index: -1;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(110%);
+    }
+
+    &:hover::before {
+        width: 100%;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transform: scale(105%);
+    }
+}
+
+@mixin red-img-btn($width: 1.5em, $height: 1.5em, $font-size: get-font-size('large')) {
+    @include img-btn($width, $height, $font-size);
+    color: $red;
+    @include transition();
+
+    &:hover {
+        color: $light-red;
+        transform: scale(110%);
+        cursor: pointer;
+    }
+}
+
+@mixin darkblue-img-btn($width: 2em, $height: 2em, $font-size: get-font-size('extra-large')) {
+    @include img-btn($width, $height, $font-size);
+    color: $white;
+    border: none;
+    border-radius: 10px;
+    @include transition();
+
+    &:hover {
+        background-color: $jeans;
+        transform: translateY(-10%);
+        box-shadow: 0px 10px 15px black;
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: $light-blue;
+    }
+}

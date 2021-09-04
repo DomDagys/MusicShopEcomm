@@ -1,0 +1,51 @@
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../components/buttons';
+@import '../components/headings';
+@import '../abstracts/mixins';
+@import '../abstracts/animations';
+
+.reviews {
+    position: relative;
+    height: $reviews-height;
+
+    &__liquid-drop {
+        border-radius: 54% 46% 42% 58% / 60% 58% 42% 40%;
+        border: 1px solid rgba(#ffffff, 0.4);
+        border-bottom: 1px solid rgba(#ffffff, 0.2);
+        border-right: 1px solid rgba(#ffffff, 0.2);
+        background-image: linear-gradient(to top right, orange, $red, $dark-red);
+        animation: blob 5s linear calc(var(--i) * 1s) infinite,
+                    wave-rise 4s ease-in calc(var(--i) * 1s) infinite;
+    }
+
+    #liquid-drop1 {
+        width: 10vw;
+        height: 10vw;
+        max-width: 100px;
+        max-height: 100px;
+        position: absolute;
+        top: -5%;
+        left: 20%;
+    }
+
+    #liquid-drop2 {
+        width: 25vw;
+        height: 25vw;
+        max-width: 200px;
+        max-height: 200px;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    }
+
+    #liquid-drop3 {
+        width: 20vw;
+        height: 20vw;
+        max-width: 150px;
+        max-height: 150px;
+        position: absolute;
+        top: 20%;
+        left: 5%;
+    }
+}

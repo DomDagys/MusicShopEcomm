@@ -1,0 +1,37 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../components/buttons';
+
+.header--mobile {
+    @include flex(row, center);
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    min-height: 4em;
+    color: $red;
+    @include transition();
+    transition-duration: 250ms;
+    transition-delay: 250ms;
+
+    .header__logo {
+        font-weight: bold;
+        font-size: get-font-size('medium');
+        @include transition();
+
+        &:hover {
+            color: $light-red;
+        }
+    }
+
+    .header__btn-wrapper {
+        @include flex(row, center);
+    }
+
+    .header__login-btn {
+        @include red-btn($font-size: get-font-size('medium-small'));
+    }
+
+    .header__nav-btn {
+        @include red-img-btn();
+    }
+}

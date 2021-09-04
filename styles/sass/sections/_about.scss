@@ -1,0 +1,55 @@
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../components/headings';
+@import '../abstracts/mixins';
+@import '../abstracts/animations';
+
+.about {
+    @include flex(column, center);
+    justify-content: flex-start;
+    background: $dark-blue;
+    color: $white;
+    overflow: hidden;
+    padding: 2em 1em;
+    min-height: $about-height;
+    
+    &__h3 {
+        @extend .h3;
+        margin-top: 2em;
+    }
+
+    &__illustration-box {
+        position: relative;
+        @include flex(column, center);
+        margin: 0 auto 1em auto;
+
+        &__img {
+            width: 80%;
+            min-width: 300px;
+            height: auto;
+        }
+
+        &__note {
+            color: $red;
+            font-size: 10vw;
+            height: auto;
+            animation: wave-rise 4s calc(var(--i)*0.5s) ease-in infinite ;
+        }
+
+        #note1 {
+            position: absolute;
+            right: 20%;
+            top: 5%;
+        }
+
+        #note2 {
+            position: absolute;
+            right: 0;
+            top: 20%;
+        }
+    }
+
+    &__p {
+        font-style: italic;
+    }
+}

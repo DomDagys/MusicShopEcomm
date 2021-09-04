@@ -1,0 +1,24 @@
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+
+.h1 {
+    font-size: get-font-size('extra-large');
+    font-weight: bold;
+    margin: 1em;
+}
+
+.h2 {
+    font-size: get-font-size('large');
+    font-weight: bold;
+    margin: 0.5em;
+}
+
+.h3 {
+    font-size: get-font-size('big');
+    font-weight: bold;
+}
+
+.h4 {
+    font-size: get-font-size('medium-big');
+    font-weight: bold;
+}

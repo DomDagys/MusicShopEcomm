@@ -1,0 +1,38 @@
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+
+@mixin flex($direction: row, $center: false) {
+    display: flex;
+    flex-direction: $direction;
+    
+    @if $center {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@mixin button($width: 6em, $height: 2em, $font-size: get-font-size('medium')) {
+    border: none;
+    border-radius: 10px;
+    width: $width;
+    height: $height;
+    margin: 0 1em;
+    font-weight: bold;
+    font-size: $font-size;
+}
+
+@mixin img-btn($width: 1.5em, $height: 1.5em, $font-size: get-font-size('large')) {
+    font-size: $font-size;
+    width: $width;
+    height: $height;
+    background: none;
+    border: none;
+}
+
+@mixin transition($duration: 150ms) {
+    transition: all $duration ease-out;
+}
+
+@mixin desktop {
+    
+}

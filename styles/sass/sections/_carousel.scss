@@ -1,0 +1,100 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+@import '../abstracts/functions';
+@import '../components/buttons';
+@import '../components/cards';
+
+.carousel {
+    @include flex(column);
+    align-items: center;
+    text-align: center;
+    position: relative;
+    height: $carousel-height;
+    background: $dark-blue;
+    color: white;
+    overflow: hidden;
+
+    &__card-container {
+        @include flex(column);
+        background: linear-gradient(to bottom right, orange, $red, $dark-red);
+        border: 2px solid rgba(#ffffff, 0.6);
+        border-bottom: 2px solid rgba(#ffffff, 0.3);
+        border-right: 2px solid rgba(#ffffff, 0.3);
+        border-radius: 10%;
+        overflow: hidden;
+        margin: 1.5em 0;
+        padding: 2em 0;
+        width: 90vw;
+        min-width: 300px;
+
+        & ul {
+            display: flex;
+            @include transition(0.5s);
+        }
+    }
+
+    &__h2 {
+        @extend .h2;
+    }
+
+    &__card {
+        @extend .item-card;
+
+        &__img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 1em;
+        }
+
+        &__label {
+        }
+
+        &__price {
+            font-size: get-font-size('medium-small');
+        }
+
+        &__review-wrapper {
+            .fas {
+                color: rgb(255, 208, 0);
+            }
+        }
+    }
+
+    &__btn-wrapper {
+        @include flex(row, center);
+        margin: 1em 0;
+
+        &__btn {
+            @include darkblue-img-btn();
+            margin: 0 1.5em;
+        }
+    }
+
+    &__wave-container {
+        align-self: flex-start;
+
+        & #wave1 {
+            height: $wave-height + 20px;
+        }
+    
+        & #wave2 {
+            opacity: 0.5;
+            height: $wave-height;
+        }
+    
+        & #wave3 {
+            opacity: 0.25;
+            left: 100px;
+            height: $wave-height - 20px;
+        }
+        
+        & svg {
+            animation: wave-rise 4s ease-in calc(var(--i) * 0.5s) infinite;
+            position: absolute;
+            bottom: 0;
+            display: block;
+            width: 100vw;
+        }
+    }
+}
