@@ -5,9 +5,66 @@
 @import '../abstracts/mixins';
 @import '../abstracts/animations';
 
+$review-font-size: get-font-size('large');
+$review-content-lines: 7;
+$img-size: 75px;
+
 .reviews {
+    @include flex(column, center);
+    background-color: $red;
+    justify-content: center;
     position: relative;
     height: $reviews-height;
+    font-size: $review-font-size;
+    color: $white;
+
+    &__content {
+        min-width: 250px;
+        width: 50vw;
+        height: $review-content-lines * $review-font-size;
+        overflow: hidden;
+        font-style: italic;
+
+        &__list {
+            list-style: none;
+            animation: switch-review-content 15s ease-in alternate infinite;
+
+            &__item {
+                padding-bottom: ($review-content-lines * $review-font-size) / 2;
+            }
+        }
+    }
+
+    &__author {
+        min-width: 250px;
+        width: 50vw;
+        margin-top: 1em;
+        height: $img-size;
+        overflow: hidden;
+        font-weight: bold;
+
+        &__list {
+            list-style: none;
+            animation: switch-author 15s ease-in alternate infinite;
+
+            &__item {
+                @include flex();
+                align-items: center;
+                line-height: $img-size;
+                padding-bottom: 5px;
+
+                img {
+                    width: $img-size;
+                    height: auto;
+                    border-radius: 50%;
+                    border: 3px solid rgba($white, 0.6);
+                    border-bottom: 3px solid rgba($white, 0.3);
+                    border-right: 3px solid rgba($white, 0.3);
+                    margin-right: 0.5em;
+                }
+            }
+        }
+    }
 
     &__liquid-drop {
         border-radius: 54% 46% 42% 58% / 60% 58% 42% 40%;
@@ -15,37 +72,45 @@
         border-bottom: 1px solid rgba(#ffffff, 0.2);
         border-right: 1px solid rgba(#ffffff, 0.2);
         background-image: linear-gradient(to top right, orange, $red, $dark-red);
+        background-size: 300%;
         animation: blob 5s linear calc(var(--i) * 1s) infinite,
-                    wave-rise 4s ease-in calc(var(--i) * 1s) infinite;
+                    wave-rise 4s ease-in calc(var(--i) * 1s) infinite,
+                    gradient-transition 2s linear infinite alternate;
     }
 
     #liquid-drop1 {
-        width: 10vw;
-        height: 10vw;
+        min-width: 25px;
+        min-height: 25px;
+        width: 5vw;
+        height: 5vw;
         max-width: 100px;
         max-height: 100px;
         position: absolute;
-        top: -5%;
+        top: -20%;
         left: 20%;
     }
 
     #liquid-drop2 {
-        width: 25vw;
-        height: 25vw;
+        min-width: 50px;
+        min-height: 50px;
+        width: 15vw;
+        height: 15vw;
         max-width: 200px;
         max-height: 200px;
         position: absolute;
-        top: 5%;
+        top: -5%;
         right: 5%;
     }
 
     #liquid-drop3 {
-        width: 20vw;
-        height: 20vw;
+        min-width: 75px;
+        min-height: 75px;
+        width: 10vw;
+        height: 10vw;
         max-width: 150px;
         max-height: 150px;
         position: absolute;
-        top: 20%;
+        top: 5%;
         left: 5%;
     }
 }

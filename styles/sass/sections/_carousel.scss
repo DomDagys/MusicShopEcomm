@@ -95,6 +95,7 @@
             bottom: 0;
             display: block;
             width: 100vw;
+            min-width: $page-min-width;
         }
     }
 }

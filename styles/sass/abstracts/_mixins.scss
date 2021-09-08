@@ -11,6 +11,12 @@
     }
 }
 
+@mixin grid($rows, $columns) {
+    display: grid;
+    grid-template-rows: repeat($rows, 1fr);
+    grid-template-columns: repeat($columns, 1fr);
+}
+
 @mixin button($width: 6em, $height: 2em, $font-size: get-font-size('medium')) {
     border: none;
     border-radius: 10px;

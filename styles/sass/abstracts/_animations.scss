@@ -1,23 +1,44 @@
 @keyframes wave-rise {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(20px);
-    }
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(20px);}
 }
 
 @keyframes blob {
-    20% {
-        border-radius: 45% 55% 62% 38% / 53% 51% 49% 47%;
-    }
-    40% {
-        border-radius: 45% 55% 49% 51% / 36% 51% 49% 64%;
-    }
-    60% {
-        border-radius: 60% 40% 57% 43% / 47% 62% 38% 53%;
-    }
-    80% {
-        border-radius: 60% 40% 32% 68% / 38% 36% 64% 62%;
-    }
+    20% {border-radius: 45% 55% 62% 38% / 53% 51% 49% 47%;}
+    40% {border-radius: 45% 55% 49% 51% / 36% 51% 49% 64%;}
+    60% {border-radius: 60% 40% 57% 43% / 47% 62% 38% 53%;}
+    80% {border-radius: 60% 40% 32% 68% / 38% 36% 64% 62%;}
 }
+
+@keyframes gradient-transition {
+    0% {background-position: left;}
+    100% {background-position: right;}
+}
+
+@keyframes switch-hero {
+    12.5% {transform: translate3d(0, 0, 0);}
+    25% {transform: translate3d(0, -100%, 0);}
+    37.5% {transform: translate3d(0, -100%, 0);}
+    50% {transform: translate3d(0, -200%, 0);}
+    62.5% {transform: translate3d(0, -200%, 0);}
+    75% {transform: translate3d(0, -100%, 0);}
+    87.5% {transform: translate3d(0, -100%, 0);}
+    100% {transform: translate3d(0, 0, 0);}
+}
+
+@keyframes switch-review-content {
+    30% {transform: translate3d(0, 0, 0);}
+    35% {transform: translate3d(0, -33%, 0);}
+    65% {transform: translate3d(0, -33%, 0);}
+    70% {transform: translate3d(0, -62%, 0);}
+    100% {transform: translate3d(0, -62%, 0);}
+}
+
+@keyframes switch-author {
+    30% {transform: translate3d(0, 0, 0);}
+    35% {transform: translate3d(0, -33%, 0);}
+    65% {transform: translate3d(0, -33%, 0);}
+    70% {transform: translate3d(0, -67%, 0);}
+    100% {transform: translate3d(0, -67%, 0);}
+}
+

@@ -3,6 +3,7 @@
 @import '../components/buttons';
 @import '../components/headings';
 @import '../abstracts/mixins';
+@import '../abstracts/animations';
 
 .hero {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5),
@@ -11,18 +12,52 @@
     text-align: center;
     padding-top: $hero-height / 6;
 
-    &__h1 {
-        @extend .h1;
+    &__container {
+        $hero-font-size: get-font-size('large');
         color: $white;
-    }
 
-    &__h2 {
-        @extend .h2;
-        color: $white;
-    }
+        &__h1 {
+            @extend .h1;
+            background-image: linear-gradient(to right, orange, $red, $dark-red);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    
+        &__text {
+            font-weight: bold;
+            height: $hero-font-size;
+            font-size: $hero-font-size;
+            @include flex(row);
+            justify-content: center;
+            overflow: hidden;
 
-    &__signup-btn {
-        @include black-btn(8em, $font-size: get-font-size('big'));
-        margin-top: 2em;
+            & p {
+                float: left;
+                display: inline;
+            }
+    
+            &__list {
+                list-style: none;
+                text-align: left;
+                color: $red;
+                margin: 0 1em;
+                animation: switch-hero 10s linear infinite;
+
+                &__item{
+                    line-height: $hero-font-size;
+                }
+            }
+        }
+    
+        &__h3 {
+            @extend .h3;
+            margin: 1em;
+        }
+    
+        &__signup-btn {
+            @include black-btn(8em, $font-size: get-font-size('big'));
+            margin-top: 2em;
+        }
     }
 }

@@ -5,6 +5,7 @@
 @import './sass/sections/hero';
 @import './sass/sections/about';
 @import './sass/sections/reviews';
+@import './sass/sections/footer';
 
 
 * {
@@ -15,7 +16,7 @@
 }
 
 body {
-    background-color: $red;
+    min-width: $page-min-width;
 }
 
 header {

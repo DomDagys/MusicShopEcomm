@@ -24,14 +24,14 @@
         margin: 0 auto 1em auto;
 
         &__img {
-            width: 80%;
+            width: 50vw;
             min-width: 300px;
             height: auto;
         }
 
         &__note {
             color: $red;
-            font-size: 10vw;
+            font-size: 2rem;
             height: auto;
             animation: wave-rise 4s calc(var(--i)*0.5s) ease-in infinite ;
         }
