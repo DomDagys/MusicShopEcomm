@@ -6,6 +6,8 @@
 @import './sass/sections/about';
 @import './sass/sections/reviews';
 @import './sass/sections/footer';
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+@import './sass/sections/nav';
 
 
 * {
@@ -25,5 +27,5 @@ header {
     top: 0;
     width: 100%;
     background-color: black;
-    z-index: 2;
+    z-index: 5;
 }

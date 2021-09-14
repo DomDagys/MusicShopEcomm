@@ -11,13 +11,13 @@
     }
 }
 
-@mixin grid($rows, $columns) {
+@mixin grid($rows, $columns, $column-unit: 1fr, $row-unit: 1fr) {
     display: grid;
-    grid-template-rows: repeat($rows, 1fr);
-    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, $row-unit);
+    grid-template-columns: repeat($columns, $column-unit);
 }
 
-@mixin button($width: 6em, $height: 2em, $font-size: get-font-size('medium')) {
+@mixin button($width: 6em, $height: 2em, $font-size: get-font-size('fs-m')) {
     border: none;
     border-radius: 10px;
     width: $width;
@@ -27,7 +27,7 @@
     font-size: $font-size;
 }
 
-@mixin img-btn($width: 1.5em, $height: 1.5em, $font-size: get-font-size('large')) {
+@mixin img-btn($width: 1.5em, $height: 1.5em, $font-size: get-font-size('fs-xl')) {
     font-size: $font-size;
     width: $width;
     height: $height;
@@ -35,8 +35,8 @@
     border: none;
 }
 
-@mixin transition($duration: 150ms) {
-    transition: all $duration ease-out;
+@mixin transition($duration: 150ms, $timing-function: ease-out) {
+    transition: all $duration $timing-function;
 }
 
 @mixin desktop {

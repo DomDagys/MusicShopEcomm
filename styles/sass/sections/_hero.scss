@@ -5,6 +5,8 @@
 @import '../abstracts/mixins';
 @import '../abstracts/animations';
 
+$hero-font-size: get-font-size('fs-xl');
+
 .hero {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5),
             rgba(0, 0, 0, 0.25), $dark-blue), url('/assets/guitar-bg.jpg');;
@@ -13,7 +15,6 @@
     padding-top: $hero-height / 6;
 
     &__container {
-        $hero-font-size: get-font-size('large');
         color: $white;
 
         &__h1 {
@@ -28,6 +29,7 @@
             font-weight: bold;
             height: $hero-font-size;
             font-size: $hero-font-size;
+            line-height: $hero-font-size;
             @include flex(row);
             justify-content: center;
             overflow: hidden;
@@ -56,7 +58,7 @@
         }
     
         &__signup-btn {
-            @include black-btn(8em, $font-size: get-font-size('big'));
+            @include black-btn(8em, $font-size: get-font-size('fs-l'));
             margin-top: 2em;
         }
     }

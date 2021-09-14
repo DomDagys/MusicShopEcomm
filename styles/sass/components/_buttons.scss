@@ -1,7 +1,7 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
-@mixin red-btn($width: 6em, $height: 2em, $font-size: get-font-size('medium')) {
+@mixin red-btn($width: 6em, $height: 2em, $font-size: get-font-size('fs-m')) {
     @include button($width, $height, $font-size);
     background-color: $red;
     color: $white;
@@ -14,7 +14,7 @@
     }
 }
 
-@mixin black-btn($width: 6em, $height: 2em, $font-size: get-font-size('medium')) {
+@mixin black-btn($width: 6em, $height: 2em, $font-size: get-font-size('fs-m')) {
     position: relative;
     @include button($width, $height, $font-size);
     background-color: black;
@@ -50,7 +50,7 @@
     }
 }
 
-@mixin red-img-btn($width: 1.5em, $height: 1.5em, $font-size: get-font-size('large')) {
+@mixin red-img-btn($width: 1.5em, $height: 1.5em, $font-size: get-font-size('fs-xl')) {
     @include img-btn($width, $height, $font-size);
     color: $red;
     @include transition();
@@ -62,7 +62,45 @@
     }
 }
 
-@mixin darkblue-img-btn($width: 2em, $height: 2em, $font-size: get-font-size('extra-large')) {
+.hamburger-btn {
+    position: relative;
+    border: none;
+    background: none;
+    width: 2em;
+    height: 2em;
+
+    & span {
+        @include transition(200ms);
+        position: absolute;
+        display: block;
+        background-color: $red;
+        width: 100%;
+        height: 3.25px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    & span:nth-child(1) {
+        @include transition(200ms);
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+
+    & span:nth-child(2) {
+        transition-delay: 200ms;
+    }
+
+    & span:nth-child(3) {
+        transition-delay: 200ms;
+    }
+
+    & span:nth-child(4) {
+        @include transition(200ms);
+        transform: translate(-50%, -50%) translateY(10px);
+    }
+}
+
+@mixin darkblue-img-btn($width: 2em, $height: 2em, $font-size: get-font-size('fs-xxl')) {
     @include img-btn($width, $height, $font-size);
     color: $white;
     border: none;
