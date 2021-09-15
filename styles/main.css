@@ -360,7 +360,7 @@
   content: "";
   position: absolute;
   z-index: 2;
-  border: 2.5px solid rgba(242, 84, 91, 0);
+  border: 2.5px solid rgba(255, 165, 0, 0);
   width: 0;
   height: 0;
 }
@@ -1443,58 +1443,67 @@
 }
 
 .reviews__container__wrap__tilt-point:nth-child(1):hover ~ .reviews__container__wrap__card {
-  -webkit-transform: rotateX(-20deg) rotateY(20deg);
-          transform: rotateX(-20deg) rotateY(20deg);
+  -webkit-transform: rotateX(20deg) rotateY(-20deg);
+          transform: rotateX(20deg) rotateY(-20deg);
+  background-position: 10px 10px;
 }
 
 .reviews__container__wrap__tilt-point:nth-child(2):hover ~ .reviews__container__wrap__card {
-  -webkit-transform: rotateX(-20deg) rotateY(0deg);
-          transform: rotateX(-20deg) rotateY(0deg);
+  -webkit-transform: rotateX(20deg) rotateY(0deg);
+          transform: rotateX(20deg) rotateY(0deg);
+  background-position: 0 10px;
 }
 
 .reviews__container__wrap__tilt-point:nth-child(3):hover ~ .reviews__container__wrap__card {
-  -webkit-transform: rotateX(-20deg) rotateY(-20deg);
-          transform: rotateX(-20deg) rotateY(-20deg);
+  -webkit-transform: rotateX(20deg) rotateY(20deg);
+          transform: rotateX(20deg) rotateY(20deg);
+  background-position: -10px 10px;
 }
 
 .reviews__container__wrap__tilt-point:nth-child(4):hover ~ .reviews__container__wrap__card {
-  -webkit-transform: rotateX(0deg) rotateY(20deg);
-          transform: rotateX(0deg) rotateY(20deg);
+  -webkit-transform: rotateX(0deg) rotateY(-20deg);
+          transform: rotateX(0deg) rotateY(-20deg);
+  background-position: 10px;
 }
 
 .reviews__container__wrap__tilt-point:nth-child(5):hover ~ .reviews__container__wrap__card {
   -webkit-transform: rotateX(0deg) rotateY(0deg);
           transform: rotateX(0deg) rotateY(0deg);
+  background-position: 0;
 }
 
 .reviews__container__wrap__tilt-point:nth-child(6):hover ~ .reviews__container__wrap__card {
-  -webkit-transform: rotateX(0deg) rotateY(-20deg);
-          transform: rotateX(0deg) rotateY(-20deg);
+  -webkit-transform: rotateX(0deg) rotateY(20deg);
+          transform: rotateX(0deg) rotateY(20deg);
+  background-position: -10px;
 }
 
 .reviews__container__wrap__tilt-point:nth-child(7):hover ~ .reviews__container__wrap__card {
-  -webkit-transform: rotateX(20deg) rotateY(20deg);
-          transform: rotateX(20deg) rotateY(20deg);
+  -webkit-transform: rotateX(-20deg) rotateY(-20deg);
+          transform: rotateX(-20deg) rotateY(-20deg);
+  background-position: 10px -10px;
 }
 
 .reviews__container__wrap__tilt-point:nth-child(8):hover ~ .reviews__container__wrap__card {
-  -webkit-transform: rotateX(20deg) rotateY(0deg);
-          transform: rotateX(20deg) rotateY(0deg);
+  -webkit-transform: rotateX(-20deg) rotateY(0deg);
+          transform: rotateX(-20deg) rotateY(0deg);
+  background-position: 0 -10px;
 }
 
 .reviews__container__wrap__tilt-point:nth-child(9):hover ~ .reviews__container__wrap__card {
-  -webkit-transform: rotateX(20deg) rotateY(-20deg);
-          transform: rotateX(20deg) rotateY(-20deg);
+  -webkit-transform: rotateX(-20deg) rotateY(20deg);
+          transform: rotateX(-20deg) rotateY(20deg);
+  background-position: -10px -10px;
 }
 
 .reviews__container__wrap__tilt-point:hover ~ .reviews__container__wrap__card::after {
-  border-color: #f2545b;
+  border-color: orange;
   width: calc(100% - 0.5em * 2 - 2.5px);
   height: calc(100% - 0.5em * 2 - 2.5px);
 }
 
 .reviews__container__wrap__tilt-point:hover ~ .reviews__container__wrap__card::before {
-  border-color: #f2545b;
+  border-color: orange;
   width: calc(100% - 0.5em * 2 - 2.5px - 2.5px);
   height: calc(100% - 0.5em * 2 - 2.5px);
 }

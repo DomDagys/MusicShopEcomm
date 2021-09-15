@@ -68,24 +68,24 @@ $img-size: 75px;
                 &:nth-child(9) { left: 66.6%; top: 66.6%; }
             }
 
-            &__tilt-point:nth-child(1):hover ~ &__card { transform: rotateX(-20deg) rotateY(20deg); }
-            &__tilt-point:nth-child(2):hover ~ &__card { transform: rotateX(-20deg) rotateY(0deg); }
-            &__tilt-point:nth-child(3):hover ~ &__card { transform: rotateX(-20deg) rotateY(-20deg); }
-            &__tilt-point:nth-child(4):hover ~ &__card { transform: rotateX(0deg) rotateY(20deg); }
-            &__tilt-point:nth-child(5):hover ~ &__card { transform: rotateX(0deg) rotateY(0deg); }
-            &__tilt-point:nth-child(6):hover ~ &__card { transform: rotateX(0deg) rotateY(-20deg); }
-            &__tilt-point:nth-child(7):hover ~ &__card { transform: rotateX(20deg) rotateY(20deg); }
-            &__tilt-point:nth-child(8):hover ~ &__card { transform: rotateX(20deg) rotateY(0deg); }
-            &__tilt-point:nth-child(9):hover ~ &__card { transform: rotateX(20deg) rotateY(-20deg); }
+            &__tilt-point:nth-child(1):hover ~ &__card { transform: rotateX(20deg) rotateY(-20deg); background-position: 10px 10px; }
+            &__tilt-point:nth-child(2):hover ~ &__card { transform: rotateX(20deg) rotateY(0deg); background-position: 0 10px; }
+            &__tilt-point:nth-child(3):hover ~ &__card { transform: rotateX(20deg) rotateY(20deg); background-position: -10px 10px; }
+            &__tilt-point:nth-child(4):hover ~ &__card { transform: rotateX(0deg) rotateY(-20deg); background-position: 10px; }
+            &__tilt-point:nth-child(5):hover ~ &__card { transform: rotateX(0deg) rotateY(0deg); background-position: 0; }
+            &__tilt-point:nth-child(6):hover ~ &__card { transform: rotateX(0deg) rotateY(20deg); background-position: -10px; }
+            &__tilt-point:nth-child(7):hover ~ &__card { transform: rotateX(-20deg) rotateY(-20deg); background-position: 10px -10px; }
+            &__tilt-point:nth-child(8):hover ~ &__card { transform: rotateX(-20deg) rotateY(0deg); background-position: 0 -10px; }
+            &__tilt-point:nth-child(9):hover ~ &__card { transform: rotateX(-20deg) rotateY(20deg); background-position: -10px -10px; }
 
             &__tilt-point:hover ~ &__card::after {
-                border-color: rgba($red, 1);
+                border-color: rgba(orange, 1);
                 width: calc(100% - #{$review-card-offset} * 2 - 2.5px);
                 height: calc(100% - #{$review-card-offset} * 2 - 2.5px);
             }
 
             &__tilt-point:hover ~ &__card::before {
-                border-color: rgba($red, 1);
+                border-color: rgba(orange, 1);
                 width: calc(100% - #{$review-card-offset} * 2 - 2.5px - 2.5px);
                 height: calc(100% - #{$review-card-offset} * 2 - 2.5px);
             }
