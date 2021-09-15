@@ -3,6 +3,8 @@
 @import '../abstracts/mixins';
 @import '../abstracts/animations';
 
+$review-card-offset: 0.5em;
+
 .item-card {
     position: relative;
     @include flex(column, center);
@@ -43,5 +45,45 @@
 
     &:hover::before {
         left: -$card-width * 2;
+    }
+}
+
+.review-card {
+    position: relative;
+    min-height: 275px;
+    min-width: 200px;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: get-font-size('fs-ms');
+    overflow: hidden;
+    border: 1px solid rgba(white, 0.5);
+    border-bottom: 1px solid rgba(white, 0);
+    border-right: 1px solid rgba(white, 0);
+
+    &::after, &::before {
+        @include transition(500ms);
+        content: "";
+        position: absolute;
+        z-index: 2;
+        border: 2.5px solid rgba($red, 0);
+        width: 0;
+        height: 0;
+    }
+
+    &::before {
+        bottom: $review-card-offset;
+        left: $review-card-offset;
+        border-top: none;
+        border-right: none;
+    }
+
+    &::after {
+        top: $review-card-offset;
+        right: $review-card-offset;
+        border-bottom: none;
+        border-left: none;
     }
 }

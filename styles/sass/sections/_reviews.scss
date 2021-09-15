@@ -14,55 +14,97 @@ $img-size: 75px;
     background-color: $red;
     justify-content: center;
     position: relative;
-    height: $reviews-height;
     font-size: $review-font-size;
     color: $white;
 
-    &__content {
-        min-width: 250px;
-        width: 50vw;
-        height: $review-content-lines * $review-font-size;
-        overflow: hidden;
-        font-style: italic;
+    &__container {
+        margin: 100px 0;
 
-        &__list {
-            list-style: none;
-            animation: switch-review-content 15s ease-in alternate infinite;
+        &__wrap {
+            position: relative;
+            margin: 2em 0;
+            perspective: 750px;
 
-            &__item {
-                padding-bottom: ($review-content-lines * $review-font-size) / 2;
-            }
-        }
-    }
-
-    &__author {
-        min-width: 250px;
-        width: 50vw;
-        margin-top: 1em;
-        height: $img-size;
-        overflow: hidden;
-        font-weight: bold;
-
-        &__list {
-            list-style: none;
-            animation: switch-author 15s ease-in alternate infinite;
-
-            &__item {
-                @include flex();
-                align-items: center;
-                line-height: $img-size;
-                padding-bottom: 5px;
-
-                img {
-                    width: $img-size;
-                    height: auto;
-                    border-radius: 50%;
-                    border: 3px solid rgba($white, 0.6);
-                    border-bottom: 3px solid rgba($white, 0.3);
-                    border-right: 3px solid rgba($white, 0.3);
-                    margin-right: 0.5em;
+            &__card {
+                @include transition(600ms);
+                @extend .review-card;
+                transform-style: preserve-3d;
+                transform: rotateX(0deg), rotateY(0deg);
+                transform: perspective(100rem);
+                box-shadow: 0px 10px 10px rgba(black, 0.3);
+    
+                &__content {
+                    @include transition(500ms);
+                    position: absolute;
+                    bottom: 0;
+                    background: rgba(black, 0.5);
+                    padding: 1em;
+    
+                    & p {
+                        margin-bottom: 0.5em;
+                        font-style: italic;
+                    }
+    
+                    & span {
+                        font-weight: bold;
+                    }
                 }
             }
+
+            &__tilt-point {
+                width: 33.3%;
+                height: 33.3%;
+                position: absolute;
+                z-index: 1;
+
+                &:nth-child(1) { left: 0; top: 0; }
+                &:nth-child(2) { left: 33.3%; top: 0; }
+                &:nth-child(3) { left: 66.6%; top: 0; }
+                &:nth-child(4) { left: 0; top: 33.3%; }
+                &:nth-child(5) { left: 33.3%; top: 33.3%; }
+                &:nth-child(6) { left: 66.6%; top: 33.3%; }
+                &:nth-child(7) { left: 0; top: 66.6%; }
+                &:nth-child(8) { left: 33.3%; top: 66.6%; }
+                &:nth-child(9) { left: 66.6%; top: 66.6%; }
+            }
+
+            &__tilt-point:nth-child(1):hover ~ &__card { transform: rotateX(-20deg) rotateY(20deg); }
+            &__tilt-point:nth-child(2):hover ~ &__card { transform: rotateX(-20deg) rotateY(0deg); }
+            &__tilt-point:nth-child(3):hover ~ &__card { transform: rotateX(-20deg) rotateY(-20deg); }
+            &__tilt-point:nth-child(4):hover ~ &__card { transform: rotateX(0deg) rotateY(20deg); }
+            &__tilt-point:nth-child(5):hover ~ &__card { transform: rotateX(0deg) rotateY(0deg); }
+            &__tilt-point:nth-child(6):hover ~ &__card { transform: rotateX(0deg) rotateY(-20deg); }
+            &__tilt-point:nth-child(7):hover ~ &__card { transform: rotateX(20deg) rotateY(20deg); }
+            &__tilt-point:nth-child(8):hover ~ &__card { transform: rotateX(20deg) rotateY(0deg); }
+            &__tilt-point:nth-child(9):hover ~ &__card { transform: rotateX(20deg) rotateY(-20deg); }
+
+            &__tilt-point:hover ~ &__card::after {
+                border-color: rgba($red, 1);
+                width: calc(100% - #{$review-card-offset} * 2 - 2.5px);
+                height: calc(100% - #{$review-card-offset} * 2 - 2.5px);
+            }
+
+            &__tilt-point:hover ~ &__card::before {
+                border-color: rgba($red, 1);
+                width: calc(100% - #{$review-card-offset} * 2 - 2.5px - 2.5px);
+                height: calc(100% - #{$review-card-offset} * 2 - 2.5px);
+            }
+        }
+
+        #review-card1 {
+            background-image: linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.75)), 
+                                url('/assets/einziger.jpg');
+            
+        }
+
+        #review-card2 {
+            background-image: linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.75)), 
+                                url('/assets/slash.jpg');
+        }
+
+        #review-card3 {
+            background-image: linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.75)), 
+                                url('/assets/kirk.png');
         }
     }
 
@@ -86,8 +128,8 @@ $img-size: 75px;
         max-width: 100px;
         max-height: 100px;
         position: absolute;
-        top: -20%;
-        left: 20%;
+        top: -10%;
+        left: 30%;
     }
 
     #liquid-drop2 {
@@ -110,7 +152,7 @@ $img-size: 75px;
         max-width: 150px;
         max-height: 150px;
         position: absolute;
-        top: 5%;
-        left: 5%;
+        top: 0%;
+        left: 10%;
     }
 }

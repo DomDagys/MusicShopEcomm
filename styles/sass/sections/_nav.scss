@@ -11,12 +11,13 @@
     z-index: 4;
     background-color: rgb(42, 42, 42);
     min-width: $page-min-width;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     padding: 1.5em;
     padding-top: $header-height;
     font-size: get-font-size('fs-xl');
     font-weight: bold;
+    overflow-y: hidden;
 
     &__link-list {
         list-style: none;

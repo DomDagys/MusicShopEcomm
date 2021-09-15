@@ -9,7 +9,7 @@ $hero-font-size: get-font-size('fs-xl');
 
 .hero {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.25), $dark-blue), url('/assets/guitar-bg.jpg');;
+            rgba(0, 0, 0, 0.25), $dark-blue), url('/assets/guitar-bg.jpg');
     min-height: $hero-height;
     text-align: center;
     padding-top: $hero-height / 6;

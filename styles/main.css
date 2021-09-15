@@ -338,6 +338,47 @@
   left: -350px;
 }
 
+.review-card, .reviews__container__wrap__card {
+  position: relative;
+  min-height: 275px;
+  min-width: 200px;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 0.875rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  border-right: 1px solid rgba(255, 255, 255, 0);
+}
+
+.review-card::after, .reviews__container__wrap__card::after, .review-card::before, .reviews__container__wrap__card::before {
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+  content: "";
+  position: absolute;
+  z-index: 2;
+  border: 2.5px solid rgba(242, 84, 91, 0);
+  width: 0;
+  height: 0;
+}
+
+.review-card::before, .reviews__container__wrap__card::before {
+  bottom: 0.5em;
+  left: 0.5em;
+  border-top: none;
+  border-right: none;
+}
+
+.review-card::after, .reviews__container__wrap__card::after {
+  top: 0.5em;
+  right: 0.5em;
+  border-bottom: none;
+  border-left: none;
+}
+
 .carousel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1303,67 +1344,174 @@
   background-color: #F2545B;
   justify-content: center;
   position: relative;
-  height: 600px;
   font-size: 1.5rem;
   color: #F3F7F0;
 }
 
-.reviews__content {
-  min-width: 250px;
-  width: 50vw;
-  height: 10.5rem;
-  overflow: hidden;
+.reviews__container {
+  margin: 100px 0;
+}
+
+.reviews__container__wrap {
+  position: relative;
+  margin: 2em 0;
+  -webkit-perspective: 750px;
+          perspective: 750px;
+}
+
+.reviews__container__wrap__card {
+  -webkit-transition: all 600ms ease-out;
+  transition: all 600ms ease-out;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(0deg), rotateY(0deg);
+          transform: rotateX(0deg), rotateY(0deg);
+  -webkit-transform: perspective(100rem);
+          transform: perspective(100rem);
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.reviews__container__wrap__card__content {
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1em;
+}
+
+.reviews__container__wrap__card__content p {
+  margin-bottom: 0.5em;
   font-style: italic;
 }
 
-.reviews__content__list {
-  list-style: none;
-  -webkit-animation: switch-review-content 15s ease-in alternate infinite;
-          animation: switch-review-content 15s ease-in alternate infinite;
-}
-
-.reviews__content__list__item {
-  padding-bottom: 5.25rem;
-}
-
-.reviews__author {
-  min-width: 250px;
-  width: 50vw;
-  margin-top: 1em;
-  height: 75px;
-  overflow: hidden;
+.reviews__container__wrap__card__content span {
   font-weight: bold;
 }
 
-.reviews__author__list {
-  list-style: none;
-  -webkit-animation: switch-author 15s ease-in alternate infinite;
-          animation: switch-author 15s ease-in alternate infinite;
+.reviews__container__wrap__tilt-point {
+  width: 33.3%;
+  height: 33.3%;
+  position: absolute;
+  z-index: 1;
 }
 
-.reviews__author__list__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  line-height: 75px;
-  padding-bottom: 5px;
+.reviews__container__wrap__tilt-point:nth-child(1) {
+  left: 0;
+  top: 0;
 }
 
-.reviews__author__list__item img {
-  width: 75px;
-  height: auto;
-  border-radius: 50%;
-  border: 3px solid rgba(243, 247, 240, 0.6);
-  border-bottom: 3px solid rgba(243, 247, 240, 0.3);
-  border-right: 3px solid rgba(243, 247, 240, 0.3);
-  margin-right: 0.5em;
+.reviews__container__wrap__tilt-point:nth-child(2) {
+  left: 33.3%;
+  top: 0;
+}
+
+.reviews__container__wrap__tilt-point:nth-child(3) {
+  left: 66.6%;
+  top: 0;
+}
+
+.reviews__container__wrap__tilt-point:nth-child(4) {
+  left: 0;
+  top: 33.3%;
+}
+
+.reviews__container__wrap__tilt-point:nth-child(5) {
+  left: 33.3%;
+  top: 33.3%;
+}
+
+.reviews__container__wrap__tilt-point:nth-child(6) {
+  left: 66.6%;
+  top: 33.3%;
+}
+
+.reviews__container__wrap__tilt-point:nth-child(7) {
+  left: 0;
+  top: 66.6%;
+}
+
+.reviews__container__wrap__tilt-point:nth-child(8) {
+  left: 33.3%;
+  top: 66.6%;
+}
+
+.reviews__container__wrap__tilt-point:nth-child(9) {
+  left: 66.6%;
+  top: 66.6%;
+}
+
+.reviews__container__wrap__tilt-point:nth-child(1):hover ~ .reviews__container__wrap__card {
+  -webkit-transform: rotateX(-20deg) rotateY(20deg);
+          transform: rotateX(-20deg) rotateY(20deg);
+}
+
+.reviews__container__wrap__tilt-point:nth-child(2):hover ~ .reviews__container__wrap__card {
+  -webkit-transform: rotateX(-20deg) rotateY(0deg);
+          transform: rotateX(-20deg) rotateY(0deg);
+}
+
+.reviews__container__wrap__tilt-point:nth-child(3):hover ~ .reviews__container__wrap__card {
+  -webkit-transform: rotateX(-20deg) rotateY(-20deg);
+          transform: rotateX(-20deg) rotateY(-20deg);
+}
+
+.reviews__container__wrap__tilt-point:nth-child(4):hover ~ .reviews__container__wrap__card {
+  -webkit-transform: rotateX(0deg) rotateY(20deg);
+          transform: rotateX(0deg) rotateY(20deg);
+}
+
+.reviews__container__wrap__tilt-point:nth-child(5):hover ~ .reviews__container__wrap__card {
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+          transform: rotateX(0deg) rotateY(0deg);
+}
+
+.reviews__container__wrap__tilt-point:nth-child(6):hover ~ .reviews__container__wrap__card {
+  -webkit-transform: rotateX(0deg) rotateY(-20deg);
+          transform: rotateX(0deg) rotateY(-20deg);
+}
+
+.reviews__container__wrap__tilt-point:nth-child(7):hover ~ .reviews__container__wrap__card {
+  -webkit-transform: rotateX(20deg) rotateY(20deg);
+          transform: rotateX(20deg) rotateY(20deg);
+}
+
+.reviews__container__wrap__tilt-point:nth-child(8):hover ~ .reviews__container__wrap__card {
+  -webkit-transform: rotateX(20deg) rotateY(0deg);
+          transform: rotateX(20deg) rotateY(0deg);
+}
+
+.reviews__container__wrap__tilt-point:nth-child(9):hover ~ .reviews__container__wrap__card {
+  -webkit-transform: rotateX(20deg) rotateY(-20deg);
+          transform: rotateX(20deg) rotateY(-20deg);
+}
+
+.reviews__container__wrap__tilt-point:hover ~ .reviews__container__wrap__card::after {
+  border-color: #f2545b;
+  width: calc(100% - 0.5em * 2 - 2.5px);
+  height: calc(100% - 0.5em * 2 - 2.5px);
+}
+
+.reviews__container__wrap__tilt-point:hover ~ .reviews__container__wrap__card::before {
+  border-color: #f2545b;
+  width: calc(100% - 0.5em * 2 - 2.5px - 2.5px);
+  height: calc(100% - 0.5em * 2 - 2.5px);
+}
+
+.reviews__container #review-card1 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.75))), url("/assets/einziger.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("/assets/einziger.jpg");
+}
+
+.reviews__container #review-card2 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.75))), url("/assets/slash.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("/assets/slash.jpg");
+}
+
+.reviews__container #review-card3 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.75))), url("/assets/kirk.png");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("/assets/kirk.png");
 }
 
 .reviews__liquid-drop {
@@ -1386,8 +1534,8 @@
   max-width: 100px;
   max-height: 100px;
   position: absolute;
-  top: -20%;
-  left: 20%;
+  top: -10%;
+  left: 30%;
 }
 
 .reviews #liquid-drop2 {
@@ -1410,8 +1558,8 @@
   max-width: 150px;
   max-height: 150px;
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: 0%;
+  left: 10%;
 }
 
 .h1, .hero__container__h1 {
@@ -1663,12 +1811,13 @@
   z-index: 4;
   background-color: #2a2a2a;
   min-width: 300px;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   padding: 1.5em;
   padding-top: 4em;
   font-size: 1.5rem;
   font-weight: bold;
+  overflow-y: hidden;
 }
 
 .nav__link-list {
