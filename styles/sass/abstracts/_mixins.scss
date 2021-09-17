@@ -39,6 +39,18 @@
     transition: all $duration $timing-function;
 }
 
+@mixin bubble($size, $min-size, $max-size, $top, $left) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    min-width: $min-size;
+    min-height: $min-size;
+    width: $size;
+    height: $size;
+    max-width: $max-size;
+    max-height: $max-size;
+}
+
 @mixin desktop {
     
 }

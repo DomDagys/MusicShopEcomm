@@ -411,7 +411,7 @@
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   border-right: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 10%;
+  border-radius: 20px;
   overflow: hidden;
   margin: 1.5em 0;
   padding: 2em 0;
@@ -443,19 +443,15 @@
 }
 
 .carousel__btn-wrapper {
+  width: 50vw;
+  min-width: 200px;
+  max-width: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 1em 0;
 }
 
@@ -470,7 +466,6 @@
   border-radius: 10px;
   -webkit-transition: all 150ms ease-out;
   transition: all 150ms ease-out;
-  margin: 0 1.5em;
 }
 
 .carousel__btn-wrapper__btn:hover {
@@ -514,6 +509,16 @@
   display: block;
   width: 100vw;
   min-width: 300px;
+}
+
+@media screen and (min-width: 570px) {
+  .carousel__btn-wrapper__btn {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  .carousel__btn-wrapper__btn i {
+    font-size: 2.5rem;
+  }
 }
 
 .hamburger-btn, .header--mobile .header__nav-btn {
@@ -1349,7 +1354,7 @@
 }
 
 .reviews__container {
-  margin: 100px 0;
+  margin: 50px 0;
 }
 
 .reviews__container__wrap {
@@ -1536,39 +1541,75 @@
 }
 
 .reviews #liquid-drop1 {
+  position: absolute;
+  top: -10%;
+  left: 30%;
   min-width: 25px;
   min-height: 25px;
   width: 5vw;
   height: 5vw;
   max-width: 100px;
   max-height: 100px;
-  position: absolute;
-  top: -10%;
-  left: 30%;
 }
 
 .reviews #liquid-drop2 {
-  min-width: 50px;
-  min-height: 50px;
-  width: 15vw;
-  height: 15vw;
-  max-width: 200px;
-  max-height: 200px;
   position: absolute;
   top: -5%;
-  right: 5%;
+  left: 80%;
+  min-width: 50px;
+  min-height: 50px;
+  width: 10vw;
+  height: 10vw;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .reviews #liquid-drop3 {
+  position: absolute;
+  top: -2.5%;
+  left: 10%;
   min-width: 75px;
   min-height: 75px;
-  width: 10vw;
-  height: 10vw;
+  width: 15vw;
+  height: 15vw;
   max-width: 150px;
   max-height: 150px;
+}
+
+.reviews #liquid-drop4 {
   position: absolute;
-  top: 0%;
-  left: 10%;
+  top: 25%;
+  left: 75%;
+  min-width: 30px;
+  min-height: 30px;
+  width: 7.5vw;
+  height: 7.5vw;
+  max-width: 125px;
+  max-height: 125px;
+}
+
+.reviews #liquid-drop5 {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  min-width: 50px;
+  min-height: 50px;
+  width: 10vw;
+  height: 10vw;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.reviews #liquid-drop6 {
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  min-width: 25px;
+  min-height: 25px;
+  width: 5vw;
+  height: 5vw;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .h1, .hero__container__h1 {
@@ -1663,7 +1704,7 @@
 .footer__social-medias a img {
   min-width: 50px;
   width: 10vw;
-  max-width: 75px;
+  max-width: 60px;
   height: auto;
   padding: 0.5em;
 }
@@ -1813,8 +1854,8 @@
 }
 
 .nav {
-  -webkit-transition: all 500ms cubic-bezier(0.37, 0.54, 0.05, 1);
-  transition: all 500ms cubic-bezier(0.37, 0.54, 0.05, 1);
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
   position: fixed;
   top: -100%;
   z-index: 4;
@@ -1834,9 +1875,9 @@
 }
 
 .nav__link-list__item {
+  -webkit-transition: all 350ms ease-in;
+  transition: all 350ms ease-in;
   text-align: center;
-  -webkit-transition: all 250ms ease-in;
-  transition: all 250ms ease-in;
   -webkit-transition-delay: calc(var(--i)*0.1s);
           transition-delay: calc(var(--i)*0.1s);
   position: relative;

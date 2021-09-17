@@ -1,13 +1,30 @@
+const header = document.querySelector('header')
+const headerHeight = header.clientHeight
+
 const hamburgetButton = document.querySelector('.header__nav-btn')
 const bars = Array.from(hamburgetButton.children)
+
 const nav = document.querySelector('.nav')
 const navList = nav.children[0]
 const links = Array.from(navList.children)
-var isOpen = false
+
+var isNavOpen = false
+var lastScroll = 0
+
 
 export const handleNav = () => {
+    window.addEventListener('scroll', e => {
+        const currentScroll = window.pageYOffset
+
+        if (currentScroll <= lastScroll) 
+            header.style.transform = "translateY(0px)"   
+        else if (!isNavOpen)
+            header.style.transform = "translateY("+ -1*headerHeight +"px)"
+        lastScroll = currentScroll
+    })
+
     hamburgetButton.addEventListener('click', e => {
-        if (isOpen) {
+        if (isNavOpen) {
             nav.style.transform = "translateY(-100%)"
 
             links.forEach(link => {
@@ -39,6 +56,6 @@ export const handleNav = () => {
             bars[3].style.opacity = 0
         }
 
-        isOpen = !isOpen
+        isNavOpen = !isNavOpen
     })
 }
