@@ -1,3 +1,5 @@
+import { applyRippleEffect } from "./effects/ripple-effect.js"
+
 const header = document.querySelector('header')
 const headerHeight = header.clientHeight
 
@@ -7,6 +9,10 @@ const bars = Array.from(hamburgetButton.children)
 const nav = document.querySelector('.nav')
 const navList = nav.children[0]
 const links = Array.from(navList.children)
+
+const mobileLoginBtn = document.querySelector('.header--desktop__bottom__login-btn')
+const desktopLoginBtn = document.querySelector('.header__login-btn')
+const loginButtons = [ mobileLoginBtn, desktopLoginBtn ]
 
 var isNavOpen = false
 var lastScroll = 0
@@ -57,5 +63,9 @@ export const handleNav = () => {
         }
 
         isNavOpen = !isNavOpen
+    })
+
+    loginButtons.map(button => {
+        applyRippleEffect(button)
     })
 }

@@ -1,34 +1,32 @@
-@import '../abstracts/mixins';
-@import '../abstracts/variables';
-@import '../abstracts/functions';
-@import '../components/buttons';
+@use '../abstracts/' as a;
+@use '../base/' as b;
+@use '../components/' as c;
 
 .header--mobile {
-    @include flex(row, center);
+    @include a.flex-center();
     justify-content: space-between;
-    padding: 0.5em 1em;
-    min-height: $header-height;
-    color: $red;
-    @include transition();
+    padding: 1em;
+    color: a.$red;
+    @include a.transition();
     transition-duration: 250ms;
     transition-delay: 250ms;
 
     .header__logo {
         font-weight: bold;
-        font-size: get-font-size('fs-m');
-        @include transition();
+        font-size: b.get-font-size('fs-m');
+        @include a.transition();
 
         &:hover {
-            color: $light-red;
+            color: a.$light-red;
         }
     }
 
     .header__btn-wrapper {
-        @include flex(row, center);
+        @include a.flex-center();
     }
 
     .header__login-btn {
-        @include red-btn($font-size: get-font-size('fs-ms'));
+        @include c.red-btn($font-size: get-font-size('fs-ms'));
     }
 
     .header__nav-btn {

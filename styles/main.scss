@@ -1,28 +1,22 @@
-@import './sass/abstracts/variables';
-@import './sass/abstracts/mixins';
-@import './sass/sections/carousel';
-@import './sass/sections/header-mobile';
-@import './sass/sections/hero';
-@import './sass/sections/about';
-@import './sass/sections/reviews';
-@import './sass/sections/footer';
+@use './sass/abstracts/' as a;
+@use './sass/base/' as b;
+@use './sass/sections/' as s;
+@use './sass/media-queries/' as q;
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
-@import './sass/sections/nav';
-
 
 * {
-    font-family: $font-primary;
+    font-family: a.$font-primary;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    min-width: $page-min-width;
+    min-width: a.$page-min-width;
 }
 
 header {
-    @include transition(500ms);
+    @include a.transition(500ms);
     position: fixed;
     top: 0;
     width: 100%;

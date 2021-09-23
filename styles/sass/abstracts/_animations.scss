@@ -42,3 +42,7 @@
     100% {transform: translate3d(0, -67%, 0);}
 }
 
+@keyframes ripple-effect {
+    0% {}
+    100% { width: 500px; height: 500px; opacity: 0; }
+}

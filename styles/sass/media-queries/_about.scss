@@ -1,0 +1,23 @@
+@use '../abstracts/' as a;
+@use '../base/' as b;
+
+@include a.tablet {
+    .about {
+        padding: 2em 4em 200px 4em;
+        
+    
+        &__h3 {
+            font-size: b.get-font-size('fs-xxl');
+        }
+    
+        &__illustration-box {
+            &__note {
+               font-size: b.get-font-size('fs-desk-ml');
+            }
+        }
+    
+        &__p {
+           font-size: b.get-font-size('fs-xl');
+        }
+    }
+}

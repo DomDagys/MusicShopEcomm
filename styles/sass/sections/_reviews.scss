@@ -1,21 +1,18 @@
-@import '../abstracts/variables';
-@import '../abstracts/functions';
-@import '../components/buttons';
-@import '../components/headings';
-@import '../abstracts/mixins';
-@import '../abstracts/animations';
+@use '../abstracts/' as a;
+@use '../base/' as b;
+@use '../components/' as c;
 
-$review-font-size: get-font-size('fs-xl');
+$review-font-size: b.get-font-size('fs-xl');
 $review-content-lines: 7;
 $img-size: 75px;
 
 .reviews {
-    @include flex(column, center);
-    background-color: $red;
+    @include a.flex-center(column);
+    background-color: a.$red;
     justify-content: center;
     position: relative;
     font-size: $review-font-size;
-    color: $white;
+    color: a.$white;
 
     &__container {
         margin: 50px 0;
@@ -24,17 +21,20 @@ $img-size: 75px;
             position: relative;
             margin: 2em 0;
             perspective: 750px;
+            min-height: 275px;
+            min-width: 200px;
+            width: 20vw;
+            height: 30vw;
 
             &__card {
-                @include transition(600ms);
                 @extend .review-card;
-                transform-style: preserve-3d;
-                transform: rotateX(0deg), rotateY(0deg);
-                transform: perspective(100rem);
-                box-shadow: 0px 10px 10px rgba(black, 0.3);
+                min-height: 275px;
+                min-width: 200px;
+                width: 27.5vw;
+                height: 30vw;
     
                 &__content {
-                    @include transition(500ms);
+                    @include a.transition(500ms);
                     position: absolute;
                     bottom: 0;
                     background: rgba(black, 0.5);
@@ -80,14 +80,14 @@ $img-size: 75px;
 
             &__tilt-point:hover ~ &__card::after {
                 border-color: rgba(orange, 1);
-                width: calc(100% - #{$review-card-offset} * 2 - 2.5px);
-                height: calc(100% - #{$review-card-offset} * 2 - 2.5px);
+                width: calc(100% - #{c.$review-card-offset} * 2 - 2.5px);
+                height: calc(100% - #{c.$review-card-offset} * 2 - 2.5px);
             }
 
             &__tilt-point:hover ~ &__card::before {
                 border-color: rgba(orange, 1);
-                width: calc(100% - #{$review-card-offset} * 2 - 2.5px - 2.5px);
-                height: calc(100% - #{$review-card-offset} * 2 - 2.5px);
+                width: calc(100% - #{c.$review-card-offset} * 2 - 2.5px - 2.5px);
+                height: calc(100% - #{c.$review-card-offset} * 2 - 2.5px);
             }
         }
 
@@ -113,7 +113,7 @@ $img-size: 75px;
         border: 1px solid rgba(#ffffff, 0.4);
         border-bottom: 1px solid rgba(#ffffff, 0.2);
         border-right: 1px solid rgba(#ffffff, 0.2);
-        background-image: linear-gradient(to top right, orange, $red, $dark-red);
+        background-image: linear-gradient(to top right, orange, a.$red, a.$dark-red);
         background-size: 300%;
         animation: blob 5s linear calc(var(--i) * 1s) infinite,
                     wave-rise 4s ease-in calc(var(--i) * 1s) infinite,
@@ -121,26 +121,26 @@ $img-size: 75px;
     }
 
     #liquid-drop1 {
-        @include bubble(5vw, 25px, 100px, -10%, 30%);
+        @include a.bubble(5vw, 25px, 100px, -10%, 30%);
     }
 
     #liquid-drop2 {
-        @include bubble(10vw, 50px, 200px, -5%, 80%);
+        @include a.bubble(10vw, 50px, 200px, -5%, 80%);
     }
 
     #liquid-drop3 {
-        @include bubble(15vw, 75px, 150px, -2.5%, 10%);
+        @include a.bubble(15vw, 75px, 150px, -2.5%, 10%);
     }
 
     #liquid-drop4 {
-        @include bubble(7.5vw, 30px, 125px, 25%, 75%);
+        @include a.bubble(7.5vw, 30px, 125px, 25%, 75%);
     }
 
     #liquid-drop5 {
-        @include bubble(10vw, 50px, 200px, 40%, 5%);
+        @include a.bubble(10vw, 50px, 200px, 40%, 5%);
     }
 
     #liquid-drop6 {
-        @include bubble(5vw, 25px, 100px, 70%, 80%);
+        @include a.bubble(5vw, 25px, 100px, 70%, 80%);
     }
 }

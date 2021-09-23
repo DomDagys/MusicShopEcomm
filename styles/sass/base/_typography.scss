@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use '../abstracts/variables' as v;
+
 $font-sizes: (
     'fs-xs': 0.5rem,
     'fs-s': 0.75rem,
@@ -6,5 +9,14 @@ $font-sizes: (
     'fs-ml': 1.125rem,
     'fs-l': 1.25rem,
     'fs-xl': 1.5rem,
-    'fs-xxl': 2rem
+    'fs-xxl': 2rem,
+    'fs-desk-m': 2.5rem,
+    'fs-desk-ml': 3rem,
+    'fs-desk-x': 3.5rem,
+    'fs-desk-xl': 4rem,
+    'fs-desk-xxl': 4.5rem
 );
+
+@function get-font-size($size) {
+    @return map-get($font-sizes, $size)
+}

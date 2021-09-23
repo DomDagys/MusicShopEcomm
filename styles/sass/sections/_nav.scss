@@ -1,71 +1,28 @@
-@import '../abstracts/variables';
-@import '../abstracts/functions';
-@import '../components/headings';
-@import '../abstracts/mixins';
-@import '../abstracts/animations';
+@use '../abstracts/' as a;
+@use '../base/' as b;
+@use '../components/' as c;
 
 .nav {
-    @include transition(500ms, ease-out);
+    @include a.transition(500ms, ease-out);
     position: fixed;
     top: -100%;
     z-index: 4;
     background-color: rgb(42, 42, 42);
-    min-width: $page-min-width;
+    min-width: a.$page-min-width;
     height: 100%;
     width: 100%;
     padding: 1.5em;
-    padding-top: $header-height;
-    font-size: get-font-size('fs-xl');
+    padding-top: a.$header-height;
+    font-size: b.get-font-size('fs-xl');
     font-weight: bold;
     overflow-y: hidden;
 
     &__link-list {
-        list-style: none;
-        
-        &__item {
-            @include transition(350ms, ease-in);
-            text-align: center;
-            transition-delay: calc(var(--i)*0.1s);
-            position: relative;
-            padding: 0.5em 0;
-            opacity: 0;
-
-            a {
-                position: relative;
-                @include transition(250ms);
-                color: $white;
-                text-decoration: none;
-            }
-
-            a::after {
-                @include transition(250ms);
-                content: "";
-                background-color: $red;
-                position: absolute;
-                left: 50%;
-                right: 50%;
-                bottom: 0;
-                width: 0;
-                height: 3px;
-                opacity: 0;
-                z-index: -1;
-            }
-
-            a:hover {
-                color: $red;
-            }
-
-            a:hover::after {
-                width: auto;
-                left: 0;
-                right: 0;
-                opacity: 1;
-            }
-        }
+        @extend .nav-list;
     }
 
     &__social-medias {
-        @include flex(row, center);
+        @include a.flex-center();
         margin: 2em 0;
 
         a {

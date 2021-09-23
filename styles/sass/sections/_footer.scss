@@ -1,29 +1,27 @@
-@import '../abstracts/variables';
-@import '../abstracts/functions';
-@import '../components/headings';
-@import '../abstracts/mixins';
+@use '../abstracts/' as a;
+@use '../base/' as b;
+@use '../components/' as c;
 
 .footer {
-    @include flex(column, center);
+    @include a.flex-center(column);
     background-color: black;
-    color: $white;
+    color: a.$white;
     padding: 1em;
-    font-size: get-font-size('fs-ms');
+    font-size: b.get-font-size('fs-ms');
 
     &__grid {
-        @include grid(1, 3);
+        @include a.grid(1, 3);
         
         &__links {
             padding: 0.5em;
 
             &__list {
-                list-style: none;
+                @include a.clear-ul();
 
                 &__item {
 
                     a {
-                        color: $white;
-                        text-decoration: none;
+                        color: a.$white;
                     }
                     
                     a:hover {
@@ -35,7 +33,7 @@
     }
 
     &__social-medias {
-        @include flex(row, center);
+        @include a.flex-center();
         margin: 1em 0.5em;
 
         a {
@@ -52,7 +50,7 @@
 
     &__notice {
         text-align: center;
-        font-size: get-font-size('fs-s');
+        font-size: b.get-font-size('fs-s');
         text-decoration: underline;
     }
 }

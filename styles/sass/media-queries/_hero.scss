@@ -1,0 +1,29 @@
+@use '../abstracts/' as a;
+@use '../base/' as b;
+
+@include a.tablet {
+    .hero {
+        min-height: a.$hero-height + 200px;
+
+        &__container {
+            margin-top: 100px;
+
+            &__h1 {
+                font-size: b.get-font-size('fs-desk-ml');
+            }
+
+            &__text {
+                font-size: b.get-font-size('fs-xxl');
+            }
+
+            &__h3 {
+                font-size: b.get-font-size('fs-xl');
+            }
+
+            &__signup-btn {
+                font-size: b.get-font-size('fs-xl');
+                margin-top: 2em;
+            }
+        }
+    }
+}

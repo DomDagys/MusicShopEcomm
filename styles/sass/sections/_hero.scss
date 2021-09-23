@@ -1,25 +1,23 @@
-@import '../abstracts/variables';
-@import '../abstracts/functions';
-@import '../components/buttons';
-@import '../components/headings';
-@import '../abstracts/mixins';
-@import '../abstracts/animations';
+@use 'sass:math';
+@use '../abstracts/' as a;
+@use '../base/' as b;
+@use '../components/' as c;
 
-$hero-font-size: get-font-size('fs-xl');
+$hero-font-size: b.get-font-size('fs-xl');
 
 .hero {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.25), $dark-blue), url('/assets/guitar-bg.jpg');
-    min-height: $hero-height;
+            rgba(0, 0, 0, 0.25), a.$dark-blue), url('/assets/guitar-bg.jpg');
+    min-height: a.$hero-height;
     text-align: center;
-    padding-top: $hero-height / 6;
+    padding-top: math.div(a.$hero-height, 6);
 
     &__container {
-        color: $white;
+        color: a.$white;
 
         &__h1 {
             @extend .h1;
-            background-image: linear-gradient(to right, orange, $red, $dark-red);
+            background-image: linear-gradient(to right, orange, a.$red, a.$dark-red);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -30,8 +28,7 @@ $hero-font-size: get-font-size('fs-xl');
             height: $hero-font-size;
             font-size: $hero-font-size;
             line-height: $hero-font-size;
-            @include flex(row);
-            justify-content: center;
+            @include a.flex(row, center);
             overflow: hidden;
 
             & p {
@@ -42,7 +39,7 @@ $hero-font-size: get-font-size('fs-xl');
             &__list {
                 list-style: none;
                 text-align: left;
-                color: $red;
+                color: a.$red;
                 margin: 0 1em;
                 animation: switch-hero 10s linear infinite;
 
@@ -58,7 +55,7 @@ $hero-font-size: get-font-size('fs-xl');
         }
     
         &__signup-btn {
-            @include black-btn(8em, $font-size: get-font-size('fs-l'));
+            @include c.black-btn(8em, $font-size: b.get-font-size('fs-l'));
             margin-top: 2em;
         }
     }

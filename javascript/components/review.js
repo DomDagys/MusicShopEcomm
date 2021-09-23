@@ -5,7 +5,7 @@ const observerParams = {
     threshhold: 1
 }
 
-export const handleScroll = () => {
+export const handleReviewCards = () => {
 
     const reviewObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {

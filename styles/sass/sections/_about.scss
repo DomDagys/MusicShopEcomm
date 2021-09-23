@@ -1,17 +1,14 @@
-@import '../abstracts/variables';
-@import '../abstracts/functions';
-@import '../components/headings';
-@import '../abstracts/mixins';
-@import '../abstracts/animations';
+@use '../abstracts/' as a;
+@use '../components/' as c;
 
 .about {
-    @include flex(column, center);
+    @include a.flex-center(column);
     justify-content: flex-start;
-    background: $dark-blue;
-    color: $white;
+    background: a.$dark-blue;
+    color: a.$white;
     overflow: hidden;
-    padding: 2em 1em;
-    min-height: $about-height;
+    padding: 2em;
+    min-height: a.$about-height;
     
     &__h3 {
         @extend .h3;
@@ -20,7 +17,7 @@
 
     &__illustration-box {
         position: relative;
-        @include flex(column, center);
+        @include a.flex-center(column);
         margin: 0 auto 1em auto;
 
         &__img {
@@ -30,7 +27,7 @@
         }
 
         &__note {
-            color: $red;
+            color: a.$red;
             font-size: 2rem;
             height: auto;
             animation: wave-rise 4s calc(var(--i)*0.5s) ease-in infinite ;

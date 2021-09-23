@@ -1,13 +1,26 @@
-@import '../abstracts/variables';
-@import '../abstracts/functions';
+@use '../base/typography' as b;
+@use '../abstracts/variables' as v;
 
-@mixin flex($direction: row, $center: false) {
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
     display: flex;
     flex-direction: $direction;
-    
-    @if $center {
-        justify-content: center;
-        align-items: center;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+@mixin clear-ul {
+    list-style: none;
+
+    li a {
+        text-decoration: none;
     }
 }
 
@@ -17,7 +30,7 @@
     grid-template-columns: repeat($columns, $column-unit);
 }
 
-@mixin button($width: 6em, $height: 2em, $font-size: get-font-size('fs-m')) {
+@mixin button($width: 6em, $height: 2em, $font-size: b.get-font-size('fs-m')) {
     border: none;
     border-radius: 10px;
     width: $width;
@@ -27,7 +40,7 @@
     font-size: $font-size;
 }
 
-@mixin img-btn($width: 1.5em, $height: 1.5em, $font-size: get-font-size('fs-xl')) {
+@mixin img-btn($width: 1.5em, $height: 1.5em, $font-size: b.get-font-size('fs-xl')) {
     font-size: $font-size;
     width: $width;
     height: $height;
@@ -51,6 +64,8 @@
     max-height: $max-size;
 }
 
-@mixin desktop {
-    
+@mixin tablet() {
+    @media screen and (min-width: v.$breakpoint-tablet) {
+        @content
+    }
 }

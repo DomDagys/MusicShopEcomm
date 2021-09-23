@@ -1,29 +1,31 @@
-@import '../abstracts/variables';
-@import '../abstracts/mixins';
+@use '../abstracts/' as a;
+@use '../base/' as b;
 
-@mixin red-btn($width: 6em, $height: 2em, $font-size: get-font-size('fs-m')) {
-    @include button($width, $height, $font-size);
-    background-color: $red;
-    color: $white;
-    @include transition();
+
+@mixin red-btn($width: 6em, $height: 2em, $font-size: b.get-font-size('fs-m')) {
+    @include a.button($width, $height, $font-size);
+    position: relative;
+    overflow: hidden;
+    background-color: a.$red;
+    color: a.$white;
+    @include a.transition();
 
     &:hover {
-        background-color: $light-red;
-        transform: scale(105%);
+        transform: scale(110%);
         cursor: pointer;
     }
 }
 
-@mixin black-btn($width: 6em, $height: 2em, $font-size: get-font-size('fs-m')) {
+@mixin black-btn($width: 6em, $height: 2em, $font-size: b.get-font-size('fs-m')) {
     position: relative;
-    @include button($width, $height, $font-size);
+    @include a.button($width, $height, $font-size);
     background-color: black;
-    color: $white;
-    border: solid 2px $red;
-    @include transition();
+    color: a.$white;
+    border: solid 2px a.$red;
+    @include a.transition();
 
     &::before {
-        @include transition(250ms);
+        @include a.transition(250ms);
         border-radius: 10px;
         position: absolute;
         width: 0;
@@ -32,7 +34,7 @@
         bottom: 0;
         opacity: 0;
         content: "";
-        background-color: $red;
+        background-color: a.$red;
         z-index: -1;
     }
 
@@ -50,13 +52,13 @@
     }
 }
 
-@mixin red-img-btn($width: 1.5em, $height: 1.5em, $font-size: get-font-size('fs-xl')) {
-    @include img-btn($width, $height, $font-size);
-    color: $red;
-    @include transition();
+@mixin red-img-btn($width: 1.5em, $height: 1.5em, $font-size: b.get-font-size('fs-xl')) {
+    @include a.img-btn($width, $height, $font-size);
+    color: a.$red;
+    @include a.transition();
 
     &:hover {
-        color: $light-red;
+        color: a.$light-red;
         transform: scale(110%);
         cursor: pointer;
     }
@@ -69,11 +71,11 @@
     width: 2em;
     height: 2em;
 
-    & span {
-        @include transition(200ms);
+    span {
+        @include a.transition(200ms);
         position: absolute;
         display: block;
-        background-color: $red;
+        background-color: a.$red;
         width: 100%;
         height: 3.25px;
         top: 50%;
@@ -81,40 +83,36 @@
         transform: translate(-50%, -50%);
     }
 
-    & span:nth-child(1) {
-        @include transition(200ms);
+    span:nth-child(1) {
+        @include a.transition(200ms);
         transform: translate(-50%, -50%) translateY(-10px);
     }
 
-    & span:nth-child(2) {
-        transition-delay: 200ms;
-    }
-
-    & span:nth-child(3) {
-        transition-delay: 200ms;
-    }
-
-    & span:nth-child(4) {
-        @include transition(200ms);
+    span:nth-child(4) {
+        @include a.transition(200ms);
         transform: translate(-50%, -50%) translateY(10px);
+    }
+
+    &:hover span {
+        background-color: a.$light-red;
     }
 }
 
-@mixin darkblue-img-btn($width: 2em, $height: 2em, $font-size: get-font-size('fs-xxl')) {
-    @include img-btn($width, $height, $font-size);
-    color: $white;
+@mixin darkblue-img-btn($width: 2em, $height: 2em, $font-size: b.get-font-size('fs-xxl')) {
+    @include a.img-btn($width, $height, $font-size);
+    color: a.$white;
     border: none;
     border-radius: 10px;
-    @include transition();
+    @include a.transition();
 
     &:hover {
-        background-color: $jeans;
+        background-color: a.$jeans;
         transform: translateY(-10%);
         box-shadow: 0px 10px 15px black;
         cursor: pointer;
     }
 
     &:active {
-        background-color: $light-blue;
+        background-color: a.$light-blue;
     }
 }

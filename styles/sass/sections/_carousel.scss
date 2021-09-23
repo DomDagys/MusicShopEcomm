@@ -1,22 +1,19 @@
-@import '../abstracts/mixins';
-@import '../abstracts/variables';
-@import '../abstracts/functions';
-@import '../components/buttons';
-@import '../components/cards';
+@use '../abstracts/' as a;
+@use '../base/' as b;
+@use '../components/' as c;
 
 .carousel {
-    @include flex(column);
-    align-items: center;
+    @include a.flex(column, flex-start, center);
     text-align: center;
     position: relative;
-    height: $carousel-height;
-    background: $dark-blue;
+    height: a.$carousel-height;
+    background: a.$dark-blue;
     color: white;
     overflow: hidden;
 
     &__card-container {
-        @include flex(column);
-        background: linear-gradient(to bottom right, orange, $red, $dark-red);
+        @include a.flex(column);
+        background: linear-gradient(to bottom right, orange, a.$red, a.$dark-red);
         border: 2px solid rgba(#ffffff, 0.6);
         border-bottom: 2px solid rgba(#ffffff, 0.3);
         border-right: 2px solid rgba(#ffffff, 0.3);
@@ -29,7 +26,7 @@
 
         & ul {
             display: flex;
-            @include transition(0.5s);
+            @include a.transition(0.5s);
         }
     }
 
@@ -39,6 +36,11 @@
 
     &__card {
         @extend .item-card;
+        min-width: a.$card-width;
+        width: a.$card-width;
+        min-height: a.$card-height;
+        padding: 1em 2em;
+        margin: 1em;
 
         &__img {
             width: 100px;
@@ -51,7 +53,7 @@
         }
 
         &__price {
-            font-size: get-font-size('fs-ms');
+            font-size: b.get-font-size('fs-ms');
         }
 
         &__review-wrapper {
@@ -65,12 +67,11 @@
         width: 50vw;
         min-width: 200px;
         max-width: 350px;
-        display: flex;
-        justify-content: space-between;
+        @include a.flex(row, space-between);
         margin: 1em 0;
 
         &__btn {
-            @include darkblue-img-btn();
+            @include c.darkblue-img-btn();
         }
     }
 
@@ -78,18 +79,18 @@
         align-self: flex-start;
 
         #wave1 {
-            height: $wave-height + 20px;
+            height: a.$wave-height + 20px;
         }
     
         #wave2 {
             opacity: 0.5;
-            height: $wave-height;
+            height: a.$wave-height;
         }
     
         #wave3 {
             opacity: 0.25;
             left: 100px;
-            height: $wave-height - 20px;
+            height: a.$wave-height - 20px;
         }
         
         svg {
@@ -98,22 +99,7 @@
             bottom: 0;
             display: block;
             width: 100vw;
-            min-width: $page-min-width;
-        }
-    }
-}
-
-@media screen and (min-width: $mobile) {
-    .carousel {
-        &__btn-wrapper {
-            &__btn {
-               width: 2.5em;
-               height: 2.5em;
-
-               i {
-                font-size: 2.5rem;
-               }
-            }
+            min-width: a.$page-min-width;
         }
     }
 }

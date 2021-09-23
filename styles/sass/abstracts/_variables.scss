@@ -1,16 +1,20 @@
+//fonts 
 $font-primary: 'Heebo';
 
+//colors
 $red: #F2545B;
 $dark-red: #A93F55;
 $light-red: #ff8d93;
 $dark-blue: #1c2f44;
 $grey: rgb(195, 195, 195);
+$dark-grey: rgb(78, 78, 78);
 $gunmetal: #19323C;
 $white: #F3F7F0;
 $jeans: #2f4e72;
 $light-blue: #3988bd;
 $review-card1-color: rgb(67, 49, 255);
 
+//sizes
 $page-min-width: 300px;
 $header-height: 4em;
 $hero-height: 600px;
@@ -19,6 +23,8 @@ $carousel-height: 800px;
 $reviews-height: 600px;
 $wave-height: 200px;
 $card-width: 175px;
+$card-height: 250px;
 
-$mobile: 570px;
-$tablet: 770px;
+//breakpoints
+$breakpoint-mobile: 570px;
+$breakpoint-tablet: 770px;

@@ -1,0 +1,10 @@
+@use '../abstracts/' as a;
+
+@include a.tablet {
+    .header--mobile {
+        display: none;
+    }
+    .header--desktop {
+        display: initial;
+    }
+}
