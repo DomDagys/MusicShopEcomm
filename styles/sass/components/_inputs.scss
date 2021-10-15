@@ -1,7 +1,7 @@
 @use '../abstracts/' as a;
 @use '../base/' as b;
 
-.simple-search {
+.red-search-bar {
     @include a.flex(row, space-between, center);
     @include a.transition();
     border-radius: 25px;
@@ -53,3 +53,33 @@
     }
 }
 
+.simple-submit {
+    @include a.flex(row, space-between, center);
+    padding: 0.25em;
+    background: white;
+    border-radius: 20px;
+
+    input {
+        height: 100%;
+        padding: 0.2em;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+    }
+
+    svg {
+        #arrow {
+            @include a.transition(300ms, ease-out);
+            transform-origin: center;
+            stroke: black;
+        }
+
+        &:hover {
+            #arrow {
+                stroke: a.$red;
+                fill: a.$red;
+                transform: rotate(360deg);
+            }
+        }
+    }
+}

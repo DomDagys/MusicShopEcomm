@@ -25,7 +25,7 @@
             }
 
             &__search {
-                @extend .simple-search;
+                @extend .red-search-bar;
                 min-width: 17.5em;
                 height: 2em;
                 width: 30vw;

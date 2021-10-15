@@ -1,28 +1,28 @@
-@use '../abstracts/' as a;
-@use '../base/' as b;
+@use "../abstracts/" as a;
+@use "../base/" as b;
 
 @include a.tablet {
-    .carousel {
-
-        &__h2 {
-            font-size: b.get-font-size('fs-desk-m');
-        }
-
-        &__btn-wrapper {
-            &__btn {
-               width: b.get-font-size('fs-desk-m');
-               height: b.get-font-size('fs-desk-m');
-
-               i {
-                font-size: b.get-font-size('fs-desk-m');
-               }
-            }
-        }
-
-        &__wave-container {
-            #wave3 {
-                left: 200px;
-            }
-        }
+  .carousel {
+    height: a.$carousel-height + 150px;
+    &__h2 {
+      font-size: b.get-font-size("fs-desk-m");
     }
+
+    &__btn-wrapper {
+      &__btn {
+        width: b.get-font-size("fs-desk-xxl");
+        height: b.get-font-size("fs-desk-xxl");
+
+        i {
+          font-size: b.get-font-size("fs-desk-l");
+        }
+      }
+    }
+
+    &__wave-container {
+      #wave3 {
+        left: 200px;
+      }
+    }
+  }
 }
