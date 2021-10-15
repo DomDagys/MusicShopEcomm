@@ -42,22 +42,22 @@
     transform: translate3d(0, 0, 0);
   }
   25% {
-    transform: translate3d(0, -115%, 0);
+    transform: translate3d(0, -120%, 0);
   }
   37.5% {
-    transform: translate3d(0, -115%, 0);
+    transform: translate3d(0, -120%, 0);
   }
   50% {
-    transform: translate3d(0, -230%, 0);
+    transform: translate3d(0, -240%, 0);
   }
   62.5% {
-    transform: translate3d(0, -230%, 0);
+    transform: translate3d(0, -240%, 0);
   }
   75% {
-    transform: translate3d(0, -115%, 0);
+    transform: translate3d(0, -120%, 0);
   }
   87.5% {
-    transform: translate3d(0, -115%, 0);
+    transform: translate3d(0, -120%, 0);
   }
   100% {
     transform: translate3d(0, 0, 0);
@@ -261,22 +261,22 @@
     transform: translate3d(0, 0, 0);
   }
   25% {
-    transform: translate3d(0, -115%, 0);
+    transform: translate3d(0, -120%, 0);
   }
   37.5% {
-    transform: translate3d(0, -115%, 0);
+    transform: translate3d(0, -120%, 0);
   }
   50% {
-    transform: translate3d(0, -230%, 0);
+    transform: translate3d(0, -240%, 0);
   }
   62.5% {
-    transform: translate3d(0, -230%, 0);
+    transform: translate3d(0, -240%, 0);
   }
   75% {
-    transform: translate3d(0, -115%, 0);
+    transform: translate3d(0, -120%, 0);
   }
   87.5% {
-    transform: translate3d(0, -115%, 0);
+    transform: translate3d(0, -120%, 0);
   }
   100% {
     transform: translate3d(0, 0, 0);
