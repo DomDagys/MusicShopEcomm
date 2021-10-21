@@ -26,14 +26,16 @@ export const handleReviewCards = () => {
       easing: "cubic-bezier(.03,.98,.52,.99)",
       reverse: true,
     });
-    card.addEventListener("mouseenter", () => {});
     card.addEventListener("mousemove", (event) => {
       const clientRect = card.getBoundingClientRect();
       let centerX = card.offsetLeft + card.offsetWidth / 2 + clientRect.x;
       let centerY = card.offsetTop + card.offsetHeight / 2 + clientRect.y;
-      card.style.backgroundPosition = `${-(event.clientX - centerX) / 10}px ${
-        -(event.clientY - centerY) / 10
-      }px`;
+      // card.style.backgroundPosition = `${-(event.clientX - centerX) / 10}px ${
+      //   -(event.clientY - centerY) / 10
+      // }px`;
+      card.style.transform = `rotateX(${
+        -(event.clientX - centerX) / 10
+      }deg) rotateY(${-(event.clientY - centerY) / 10}deg)`;
     });
     card.addEventListener("mouseleave", () => {
       card.style.transform = "rotateX(0deg) rotateY(0deg)";
