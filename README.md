@@ -1,4 +1,4 @@
 # MusicShopEcomm
-HTML, SASS and javascript landing page project
+Static HTML, SASS and javascript landing page project
 
 Page demo: https://musicianschoice.netlify.app/
