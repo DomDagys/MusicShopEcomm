@@ -18,49 +18,59 @@ const loginButtons = [mobileLoginBtn, desktopLoginBtn];
 
 var isNavOpen = false;
 var lastScroll = 0;
+var tabletBreakpoint = 765;
+
+const openNav = () => {
+  nav.style.transform = "translateY(-100%)";
+
+  links.forEach((link) => {
+    link.style.opacity = 0;
+  });
+
+  bars[0].style.transform = "translate(-50%, -50%) translateY(-10px)";
+  bars[0].style.opacity = 1;
+
+  bars[1].style.transform = "translate(-50%, -50%)";
+  bars[2].style.transform = "translate(-50%, -50%)";
+
+  bars[3].style.transform = "translate(-50%, -50%) translateY(10px)";
+  bars[3].style.opacity = 1;
+};
+
+const closeNav = () => {
+  nav.style.transform = "translateY(100%)";
+
+  links.forEach((link) => {
+    link.style.opacity = 1;
+  });
+
+  bars[0].style.transform = "translate(-50%, -50%) translateY(-20px)";
+  bars[0].style.opacity = 0;
+
+  bars[1].style.transform = "translate(-50%, -50%) rotate(45deg)";
+  bars[2].style.transform = "translate(-50%, -50%) rotate(-45deg)";
+
+  bars[3].style.transform = "translate(-50%, -50%) translateY(20px)";
+  bars[3].style.opacity = 0;
+};
 
 export const handleNav = () => {
-  window.addEventListener("scroll", (e) => {
-    const currentScroll = window.pageYOffset;
+  // window.addEventListener("scroll", (e) => {
+  //   const currentScroll = window.pageYOffset;
 
-    if (currentScroll <= lastScroll) header.style.transform = "translateY(0px)";
-    else if (!isNavOpen)
-      header.style.transform = "translateY(" + -1 * headerHeight + "px)";
-    lastScroll = currentScroll;
+  //   if (currentScroll <= lastScroll) header.style.transform = "translateY(0px)";
+  //   else if (!isNavOpen)
+  //     header.style.transform = "translateY(" + -1 * headerHeight + "px)";
+  //   lastScroll = currentScroll;
+  // });
+
+  window.addEventListener("resize", (event) => {
+    if (window.innerWidth >= tabletBreakpoint) openNav();
   });
 
   hamburgetButton.addEventListener("click", (e) => {
-    if (isNavOpen) {
-      nav.style.transform = "translateY(-100%)";
-
-      links.forEach((link) => {
-        link.style.opacity = 0;
-      });
-
-      bars[0].style.transform = "translate(-50%, -50%) translateY(-10px)";
-      bars[0].style.opacity = 1;
-
-      bars[1].style.transform = "translate(-50%, -50%)";
-      bars[2].style.transform = "translate(-50%, -50%)";
-
-      bars[3].style.transform = "translate(-50%, -50%) translateY(10px)";
-      bars[3].style.opacity = 1;
-    } else {
-      nav.style.transform = "translateY(100%)";
-
-      links.forEach((link) => {
-        link.style.opacity = 1;
-      });
-
-      bars[0].style.transform = "translate(-50%, -50%) translateY(-20px)";
-      bars[0].style.opacity = 0;
-
-      bars[1].style.transform = "translate(-50%, -50%) rotate(45deg)";
-      bars[2].style.transform = "translate(-50%, -50%) rotate(-45deg)";
-
-      bars[3].style.transform = "translate(-50%, -50%) translateY(20px)";
-      bars[3].style.opacity = 0;
-    }
+    if (isNavOpen) openNav();
+    else closeNav();
 
     isNavOpen = !isNavOpen;
   });

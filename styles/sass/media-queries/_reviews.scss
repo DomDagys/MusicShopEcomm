@@ -6,6 +6,13 @@
       width: 75vw;
       @include a.grid(2, 2);
       justify-items: center;
+
+      &__wrap {
+        &__card {
+          min-height: 250px;
+          min-width: 250px;
+        }
+      }
     }
 
     #liquid-drop3 {
@@ -19,6 +26,15 @@
 
     #liquid-drop5 {
       top: 80%;
+    }
+  }
+}
+
+@include a.desktop() {
+  .reviews {
+    height: a.$reviews-height;
+    &__container {
+      @include a.grid(2, 3);
     }
   }
 }

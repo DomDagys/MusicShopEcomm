@@ -19,13 +19,13 @@ export const handleReviewCards = () => {
 
   reviewCards.forEach((card) => {
     reviewObserver.observe(card);
-    VanillaTilt.init(card, {
-      max: 10,
-      perspective: 1000,
-      speed: 600,
-      easing: "cubic-bezier(.03,.98,.52,.99)",
-      reverse: true,
-    });
+    // VanillaTilt.init(card, {
+    //   max: 10,
+    //   perspective: 1000,
+    //   speed: 600,
+    //   easing: "cubic-bezier(.03,.98,.52,.99)",
+    //   reverse: true,
+    // });
     card.addEventListener("mousemove", (event) => {
       const clientRect = card.getBoundingClientRect();
       let centerX = card.offsetLeft + card.offsetWidth / 2 + clientRect.x;
@@ -34,8 +34,8 @@ export const handleReviewCards = () => {
       //   -(event.clientY - centerY) / 10
       // }px`;
       card.style.transform = `rotateX(${
-        -(event.clientX - centerX) / 10
-      }deg) rotateY(${-(event.clientY - centerY) / 10}deg)`;
+        (centerY - event.clientY) / 10
+      }deg) rotateY(${-(centerX - event.clientX) / 10}deg)`;
     });
     card.addEventListener("mouseleave", () => {
       card.style.transform = "rotateX(0deg) rotateY(0deg)";

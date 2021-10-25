@@ -2,6 +2,9 @@
 @use "../base/" as b;
 
 @include a.media-query(a.$breakpoint-tablet) {
+  .nav {
+    display: none;
+  }
   .header--mobile {
     display: none;
   }

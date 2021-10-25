@@ -3,7 +3,7 @@
 
 @include a.media-query(a.$breakpoint-tablet) {
   .about {
-    padding: 2em 4em 200px 4em;
+    height: a.$about-height + 500px;
 
     &__container {
       &__h3 {

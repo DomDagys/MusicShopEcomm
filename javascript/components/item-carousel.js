@@ -17,7 +17,8 @@ export const handleItemCarousel = () => {
 
     if (currentIndex - 1 < 0) {
       currentIndex = cards.length - 1;
-      shifted = track.scrollWidth - size;
+      console.log(cards.length);
+      shifted = size * (cards.length - 1);
     } else {
       currentIndex--;
       shifted -= size;

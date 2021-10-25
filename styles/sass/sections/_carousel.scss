@@ -12,7 +12,7 @@
   overflow: hidden;
 
   &__card-container {
-    @include a.flex(column);
+    @include a.flex(column, center);
     background: linear-gradient(to bottom right, orange, a.$red, a.$dark-red);
     border: 2px solid rgba(#ffffff, 0.6);
     border-bottom: 2px solid rgba(#ffffff, 0.3);
@@ -23,7 +23,7 @@
     padding: 2em 0;
     width: 90vw;
     min-width: 300px;
-    max-width: 1000px;
+    max-width: 1200px;
 
     & ul {
       display: flex;
