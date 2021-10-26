@@ -16,11 +16,16 @@ const mobileLoginBtn = document.querySelector(
 const desktopLoginBtn = document.querySelector(".header__login-btn");
 const loginButtons = [mobileLoginBtn, desktopLoginBtn];
 
+const homeBtnMobile = document.querySelector(".header__logo");
+const homeBtnDesktop = document.querySelector(
+  ".header--desktop__top__wrap__logo"
+);
+
 var isNavOpen = false;
 var lastScroll = 0;
 var tabletBreakpoint = 765;
 
-const openNav = () => {
+const closeNav = () => {
   nav.style.transform = "translateY(-100%)";
 
   links.forEach((link) => {
@@ -37,7 +42,7 @@ const openNav = () => {
   bars[3].style.opacity = 1;
 };
 
-const closeNav = () => {
+const openNav = () => {
   nav.style.transform = "translateY(100%)";
 
   links.forEach((link) => {
@@ -65,11 +70,12 @@ export const handleNav = () => {
   // });
 
   window.addEventListener("resize", (event) => {
-    if (window.innerWidth >= tabletBreakpoint) openNav();
+    if (window.innerWidth >= tabletBreakpoint) closeNav();
+    isNavOpen = false;
   });
 
   hamburgetButton.addEventListener("click", (e) => {
-    if (isNavOpen) openNav();
+    if (!isNavOpen) openNav();
     else closeNav();
 
     isNavOpen = !isNavOpen;
@@ -78,4 +84,7 @@ export const handleNav = () => {
   loginButtons.map((button) => {
     applyRippleEffect(button);
   });
+
+  homeBtnDesktop.addEventListener("click", (e) => (location.href = "/"));
+  homeBtnMobile.addEventListener("click", (e) => (location.href = "/"));
 };

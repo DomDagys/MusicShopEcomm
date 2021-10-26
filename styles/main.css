@@ -366,9 +366,15 @@
   text-decoration: none;
 }
 .link-list li, .header--desktop__top__links li, .header--desktop__bottom__links li {
+  margin: 0 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
 }
 .link-list li a, .header--desktop__top__links li a, .header--desktop__bottom__links li a {
+  margin-left: 0.25em;
   transition: all 150ms ease-out;
   color: #f2545b;
 }
@@ -389,10 +395,9 @@
   right: 0;
   width: 100%;
   opacity: 1;
-  background-color: #ff8d93;
 }
-.link-list li:hover a, .header--desktop__top__links li:hover a, .header--desktop__bottom__links li:hover a {
-  color: #ff8d93;
+.link-list li:hover, .header--desktop__top__links li:hover, .header--desktop__bottom__links li:hover {
+  cursor: pointer;
 }
 
 .nav-list, .nav__link-list {
@@ -403,13 +408,22 @@
 }
 .nav-list li, .nav__link-list li {
   transition: all 350ms ease-in;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   text-align: center;
-  transition-delay: calc(var(--i)*0.1s);
+  transition-delay: calc(var(--i) * 0.1s);
   position: relative;
   padding: 0.5em 0;
   opacity: 0;
 }
+.nav-list li i, .nav__link-list li i {
+  color: #f2545b;
+}
 .nav-list li a, .nav__link-list li a {
+  margin-left: 0.25em;
   position: relative;
   transition: all 250ms ease-out;
   color: #f3f7f0;
@@ -1135,10 +1149,10 @@
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("/assets/einziger.jpg");
 }
 .reviews__container #review-card2 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("/assets/slash.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("/assets/matt-mcguire.jpg");
 }
 .reviews__container #review-card3 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("/assets/kirk.png");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("/assets/stricagnoli.jpg");
 }
 .reviews__container #review-card4 {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url("/assets/reviewer4.jpg");
